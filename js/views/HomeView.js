@@ -3,7 +3,7 @@
 define([
 	'marionette',
 	'templates',
-    'underscore',
+    'underscore'
 ], function (Marionette, templates, _) {
 	'use strict';
 
@@ -29,21 +29,21 @@ define([
         },
 
         // Event handlers
-        notify: function(e) {
+        notify: function() {
             app.commands.execute('app:notify', {
                 type: 'warning',
                 title: 'A Warning',
                 description: 'Something important happened! Let the user know it.'
             });
         },
-        showSampleModal: function(e) {
+        showSampleModal: function() {
             app.commands.execute("app:dialog:simple", {
                 title: 'Dialog title!', // Optional
                 message: 'The important message for user!'
             });
         },
 
-        showSampleConfirm: function(e) {
+        showSampleConfirm: function() {
             app.commands.execute("app:dialog:confirm", {
                 icon: 'info-sign',
                 title: 'Action confirmation!',
@@ -51,14 +51,14 @@ define([
                 confirmNo: function() {
                     app.commands.execute('app:notify', {
                         type: 'warning',
-                        title: 'You\'ve choosed No',
+                        title: 'You\'ve chosen No',
                         description: 'No problem. No action was taken.'
                     }
                 )},
                 confirmYes: function() {
                     app.commands.execute('app:notify', {
                         type: 'success',
-                        title: 'You\'ve choosed Yes',
+                        title: 'You\'ve chosen Yes',
                         description: 'You\'ve agreed! Thanks :)'
                     }
                 )}
